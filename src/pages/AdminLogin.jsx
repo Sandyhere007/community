@@ -56,7 +56,7 @@ const AdminLogin = () => {
         <div className="button">
           <input disabled={loading} type="submit" value="Login" />
         </div>
-        {/* <span>Create New Account </span> <Link to={"/userregister"}>Register</Link> */}
+        {/* <span>Create New Account </span> <Link to={"/userregister111"}>Register</Link> */}
          
       </form>
     </div>

@@ -9,14 +9,15 @@ const UserRegister = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState(91 );
+  const [username , setUsername] =useState("");
+  const [phone, setPhone] = useState("");
   const {isAuthenticated , setIsAuthenticated ,loading  , setLoading } = useContext(Context);
   const submitHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
     try { 
       const { data } = await axios.post(`${server}/user/register`, {
-        name,  email, password, role: "user"
+        name, username, phone, email, password, 
       },
         {
           headers: { "Content-Type": "application/json",
@@ -46,14 +47,18 @@ const UserRegister = () => {
                 <span className="details">Name</span>
                 <input type="text" placeholder="Enter your name" name='name' value={name} onChange={(e) => setName(e.target.value)}  />
               </div>
-              
               <div className="input-box">
-                <span className="details">Email</span>
-                <input type="email" placeholder="Enter your email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <span className="details">Username</span>
+                <input type="text" placeholder="Enter your Username" name='username' value={username} onChange={(e) => setUsername(e.target.value)}  />
               </div>
+              
               <div className="input-box">
                 <span className="details">Phone</span>
                 <input type="text" placeholder="Enter your phone" name='phone' value={phone} onChange={(e) => setPhone(e.target.value)}  />
+              </div>
+              <div className="input-box">
+                <span className="details">Email</span>
+                <input type="email" placeholder="Enter your email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
           
               <div className="input-box">

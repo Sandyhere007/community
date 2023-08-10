@@ -15,6 +15,7 @@ import { Context, server } from './index.js';
 import axios from 'axios';
 import SdeChallenge1 from './components/SdeChallenge1.jsx';
 import SdeChallengeAdd1 from './components/admin/SdeChallengeAdd1.jsx';
+import Community from './pages/Community.jsx';
 
 const App = () => {
 const{setUser , setIsAuthenticated } = useContext(Context);
@@ -40,9 +41,10 @@ useEffect(() =>{
         <Route path='/' element={<Home />}></Route>
         <Route path='/challenge' element={<Challenges />}></Route>
         <Route path='/aboutuspage' element={<Aboutus />}></Route>
+        <Route path='/community' element={<Community />}></Route>
         <Route path='/userlogin' element={<UserLogin />}></Route>
-        <Route path='/adminlogin' element={<AdminLogin />}></Route>
         <Route path='/userregister' element={<UserRegister />}></Route>
+        <Route path='/adminlogin' element={<AdminLogin />}></Route>
         <Route path='/adminregister' element={<AdminRegister />}></Route>
         <Route path='/sdechallenge1' element={<SdeChallenge1/>}></Route>
         <Route path='/sdechallengeadd1' element={<SdeChallengeAdd1 />}></Route> 
