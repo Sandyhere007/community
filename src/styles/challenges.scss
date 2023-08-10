@@ -1,0 +1,160 @@
+.challenge {
+    height: 70vh;
+    margin: 1rem;
+    padding: 1rem;
+
+    >.container {
+        // border: 0.2rem solid rgb(209, 189, 199);
+        background-color: transparent;
+        border-radius: 1rem;
+        width: auto;
+        padding: 2rem;
+
+        // margin: 1rem;
+        >h1 {
+            position: relative;
+            font-size: 2rem;
+
+            &::after {
+                content: "";
+                height: 0.2rem;
+                width: 3rem;
+                background: linear-gradient(135deg, #71b7e6, #9b59b6);
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+
+    >.challengeData {
+        margin: 2rem;
+
+        >.box {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            border: 0.2rem solid rgb(209, 189, 199);
+            border-radius: 1rem;
+
+            // align-items: center;
+            flex-direction: column;
+
+            >.heading {
+                display: flex;
+                justify-content: space-between;
+
+                >h2 {
+                    border-bottom: 0.2rem solid white;
+                }
+
+                >a {
+                    padding: 0.5rem 1rem;
+                    color: #fff;
+                    background-color: #9b59b6;
+                    border-radius: 1rem;
+                    border: 1px solid #fff;
+                }
+            }
+
+            >.para {
+                margin: 1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .challenge {
+        height: auto;
+        margin: 0.4rem;
+        padding: 0.4rem;
+
+        >.container {
+            padding: 1rem;
+
+            >h1 {
+                font-size: 1.4rem;
+            }
+        }
+
+        .challengeData {
+            margin: 1rem;
+
+            .box {
+                padding: 0.5rem;
+                border-width: 0.13rem;
+
+                >.heading {
+                // justify-content: stretch;
+
+                    >h2 {
+                        font-size: 1.4rem;
+                        padding-left: 0;    
+                        border-bottom-width: 0.1rem;
+                    }
+
+                    >a {
+                        padding: 0.2rem 0.4rem;
+                        color: #fff;
+                        background-color: #9b59b6;
+                        border-radius: 0.4rem;
+                        border: 1px solid #fff;
+                    }
+                }
+
+                >.para {
+                    margin: 0.4rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .challenge {
+        height: auto;
+        margin: 0.2rem;
+        padding: 0.2rem;
+
+        >.container {
+            padding: 1rem;
+
+            >h1 {
+                font-size: 1.4rem;
+            }
+        }
+
+        .challengeData {
+            margin: 3px;
+            border: none;
+
+            .box {
+                padding: 0.5rem;
+                margin: 0;
+                border-width: 0.1rem;
+
+                >.heading {
+                    display: flex;
+                    // justify-content: center;
+                    // flex-direction: column;
+
+                   
+                    >a {
+                        // width: 45vw;
+                        padding: 0.2rem 0.4rem;
+                        color: #fff;
+                        background-color: #9b59b6;
+                        border-radius: 1rem;
+                        border: 1px solid #fff;
+                    }
+                }
+
+                >.para {
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

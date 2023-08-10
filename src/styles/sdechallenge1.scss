@@ -1,0 +1,286 @@
+.sdeChallenge {
+    background-color:#012231;
+    padding: 1rem 2rem;
+    color: #ccc;
+    >.heading {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    >.container {
+        border: 0.2rem solid #ffffff;
+        border-radius: 2rem;
+        padding: 1rem;
+        margin: 2rem;
+
+        >.date{
+            display: inline;
+            padding: 0.3rem 1rem;
+            border-radius: 1rem;
+            background-color: #6574cd;
+            margin-left: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+        >.box {
+            border-bottom: 1px solid rgb(241, 241, 241);
+            padding: 1rem;
+
+            >div:first-of-type {
+                // font-size: ;
+                font-weight: 600;
+            }
+
+            >.content {
+                margin-top: 1rem;
+                display: flex;
+                // justify-content: space-between;
+                // align-items: self-end;
+
+                >h3 {
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                }
+
+            }
+
+            >span {
+                float: right;
+            }
+
+            >.links {
+                display: flex;
+                justify-content: space-around;
+
+                >a {
+                    text-decoration: none !important;
+                    background-color: #fefefe;
+                    padding: 0.3rem 1rem;
+                    border-radius: 0.5rem;
+                    color: #6574cd;
+                    transition: .8s ease all;
+
+                    &:hover,
+                    &focus {
+                        transform: scale(1.2);
+                        cursor: pointer
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sdechallengeadd1 {
+    // margin: 1rem 1.5rem;
+    background-color:#012231;
+    padding: 1rem 2rem;
+    color: #ccc;
+    >.heading {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+
+        >.date {
+            display: flex;
+            margin-left: 2rem;
+            align-items: center;
+
+            >input {
+                width: 10rem !important;
+                margin-left: 1rem;
+            }
+        }
+
+        >h3 {
+            font-size: 1.6rem;
+        }
+    }
+
+    >.box {
+        border: 0.2rem solid #fefefe;
+        padding: 1rem;
+        border-radius: 2rem;
+        margin-bottom: 0.4rem;
+
+        >.content {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        >.links {
+            display: flex;
+            justify-content: space-around;
+
+
+        }
+    }
+
+    >.date {
+        display: flex;
+        // just
+        width: 10rem !important;
+        margin-left: 2rem;
+    }
+
+    >a {
+        display: inline-block;
+        margin-left: calc(50vw - 7rem);
+        text-decoration: none !important;
+        background-color: #fefefe;
+        padding: 0.3rem 1rem;
+        border-radius: 0.5rem;
+        color: #6574cd;
+        transition: .8s ease all;
+
+        &:hover,
+        &focus {
+            transform: scale(1.2);
+            cursor: pointer
+        }
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        margin: 0.2rem;
+        font-size: 1rem;
+        border-radius: 0.4rem;
+        padding: 0.9rem;
+        border: 1px solid #ccc;
+        border-bottom-width: 0.15rem;
+        transition: all 0.3s ease;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .sdeChallenge{
+        margin: 0.5rem 1rem;
+        >.container{
+            padding: 0.5rem;
+            >.date{
+                padding: 0.1rem 0.5rem;
+            }
+            >.box {
+                padding: 0.5rem;
+                >.content{
+                    margin-top: 0.3rem;
+                    >h3{
+                        font-size: 1rem;
+                    }
+                }
+                >span{
+                    font-size: 1rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px){
+.sdechallengeadd1 {
+    margin: 0.5rem 0.7rem;
+
+    >.heading {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.4rem;
+        align-items: center;
+        >.date {
+            display: flex;
+            margin-left: 1rem;
+            font-size: 1rem;
+            align-items: center;
+
+            >input {
+                width: 10rem !important;
+                margin-left: 0.5rem;
+            }
+        }
+
+        >h3 {
+            
+            font-size: 1rem;
+        }
+    }
+
+    >.box {
+        border: 0.1rem solid #fefefe;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    >.date {
+        display: flex;
+        width: 10rem !important;
+        margin-left: 1rem;
+    }
+    input {
+        height: 40px;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+    }
+}
+}
+@media only screen and (max-width: 500px){
+    .sdechallengeadd1 {
+        margin: 0.5rem 0.7rem;
+    
+        >.heading {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem;
+            align-items: center;
+            >.date {
+                display: flex;
+                margin-left: 1rem;
+                font-size: 1rem;
+                flex-direction: column;
+                align-items: center;
+    
+                >input {
+                    width: 10rem !important;
+                    height: 30px;
+                    margin-left: 0.5rem;
+                }
+            }
+    
+            >h3 {
+                
+                font-size: 1rem;
+            }
+        }
+    
+        >.box {
+            border: 0.1rem solid #fefefe;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            margin-bottom: 0.4rem;
+        }
+    
+        >.date {
+            display: flex;
+            width: 10rem !important;
+            margin-left: 1rem;
+        }
+        input {
+            height: 40px;
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+        }
+    }
+    }
+
+    img{
+        width: 2.5rem;
+    }
