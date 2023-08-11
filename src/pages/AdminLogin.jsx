@@ -46,6 +46,7 @@ const AdminLogin = () => {
                 <span className="details">Email</span>
                 <input type="email" placeholder="Enter your email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
+              <br />
               <div className="input-box">
                 <span className="details">Password</span>
                 <input type="password" placeholder="Enter your password" name='password' value={password} onChange={(e) => setPassword(e.target.value)}  />

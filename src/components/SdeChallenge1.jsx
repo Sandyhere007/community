@@ -7,7 +7,6 @@ import leetcode from '../icons/leetcode.png';
 import SdeChallengeAdd1 from './admin/SdeChallengeAdd1';
 import UserLogin from '../pages/UserLogin';
 
-
 const SdeChallenge1 = () => {
     const [questions, setQuestions] = useState([]);
     const {admin  , isAuthenticated} = useContext(Context);
@@ -22,10 +21,6 @@ const SdeChallenge1 = () => {
             .catch(err => console.error(err));
     }, [])
 
-
-
-
-
     return (
         (isAuthenticated) ?
         <div className="sdeChallenge">
@@ -34,7 +29,6 @@ const SdeChallenge1 = () => {
                 <span>dd/mm/yyyy - dd/mm/yyyy</span>
             </div>
             {questions.map((item, index) =>
-
             (
                 <>
                     <div className="container" key={index}>
@@ -55,7 +49,6 @@ const SdeChallenge1 = () => {
                                 <a href={item.question1.link2}> <img src={cn} alt="" /></a>
                             </div>
                         </div>
-
                         <div className="box">
                             <div>Question 2</div>
                             <div className="content">
@@ -69,7 +62,6 @@ const SdeChallenge1 = () => {
                                 <a href={item.question1.link2}> <img src={cn} alt="" /></a>
                             </div>
                         </div>
-
                         <div className="box">
                             <div>Question 3</div>
                             <div className="content">
@@ -97,8 +89,7 @@ const SdeChallenge1 = () => {
                             </div>
                         </div>
                         <hr />
-                    </div>
-                    
+                    </div> 
                 </>
             ))}
            {(admin) ? <SdeChallengeAdd1 /> :
@@ -107,5 +98,4 @@ const SdeChallenge1 = () => {
         </div> : <UserLogin />
     )
 }
-
 export default SdeChallenge1

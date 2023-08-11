@@ -1,10 +1,12 @@
 .sdeChallenge {
-    background-color:#012231;
+    background-color: #012231;
     padding: 1rem 2rem;
     color: #ccc;
+
     >.heading {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     >.container {
@@ -13,7 +15,7 @@
         padding: 1rem;
         margin: 2rem;
 
-        >.date{
+        >.date {
             display: inline;
             padding: 0.3rem 1rem;
             border-radius: 1rem;
@@ -36,14 +38,11 @@
             >.content {
                 margin-top: 1rem;
                 display: flex;
-                // justify-content: space-between;
-                // align-items: self-end;
 
                 >h3 {
                     font-size: 1.2rem;
                     font-weight: 300;
                 }
-
             }
 
             >span {
@@ -67,6 +66,11 @@
                         transform: scale(1.2);
                         cursor: pointer
                     }
+
+                    img {
+                        width: 2.5rem;
+                    }
+
                 }
             }
         }
@@ -75,9 +79,10 @@
 
 .sdechallengeadd1 {
     // margin: 1rem 1.5rem;
-    background-color:#012231;
-    padding: 1rem 2rem;
+    background-color: #012231;
+    // padding: 1rem 1rem;
     color: #ccc;
+
     >.heading {
         display: flex;
         justify-content: space-between;
@@ -108,20 +113,16 @@
         >.content {
             display: flex;
             justify-content: space-between;
-
         }
 
         >.links {
             display: flex;
             justify-content: space-around;
-
-
         }
     }
 
     >.date {
         display: flex;
-        // just
         width: 10rem !important;
         margin-left: 2rem;
     }
@@ -137,7 +138,7 @@
         transition: .8s ease all;
 
         &:hover,
-        &focus {
+        &:focus {
             transform: scale(1.2);
             cursor: pointer
         }
@@ -161,126 +162,158 @@
     }
 }
 
-@media only screen and (max-width: 600px){
-    .sdeChallenge{
-        margin: 0.5rem 1rem;
-        >.container{
-            padding: 0.5rem;
-            >.date{
-                padding: 0.1rem 0.5rem;
-            }
-            >.box {
-                padding: 0.5rem;
-                >.content{
-                    margin-top: 0.3rem;
-                    >h3{
-                        font-size: 1rem;
-                    }
-                }
-                >span{
-                    font-size: 1rem;
-                    font-weight: 400;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 700px){
-.sdechallengeadd1 {
-    margin: 0.5rem 0.7rem;
-
-    >.heading {
-        display: flex;
-        justify-content: space-between;
-        padding: 0.4rem;
-        align-items: center;
-        >.date {
-            display: flex;
-            margin-left: 1rem;
-            font-size: 1rem;
-            align-items: center;
-
-            >input {
-                width: 10rem !important;
-                margin-left: 0.5rem;
-            }
-        }
-
-        >h3 {
-            
-            font-size: 1rem;
-        }
-    }
-
-    >.box {
-        border: 0.1rem solid #fefefe;
-        padding: 0.5rem;
-        border-radius: 1rem;
-        margin-bottom: 0.4rem;
-    }
-
-    >.date {
-        display: flex;
-        width: 10rem !important;
-        margin-left: 1rem;
-    }
-    input {
-        height: 40px;
-        border: 1px solid #ccc;
-        padding: 0.5rem;
-    }
-}
-}
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 700px) {
     .sdechallengeadd1 {
         margin: 0.5rem 0.7rem;
-    
+
         >.heading {
             display: flex;
             justify-content: space-between;
             padding: 0.4rem;
             align-items: center;
+
             >.date {
                 display: flex;
                 margin-left: 1rem;
                 font-size: 1rem;
-                flex-direction: column;
                 align-items: center;
-    
+
                 >input {
                     width: 10rem !important;
-                    height: 30px;
                     margin-left: 0.5rem;
                 }
             }
-    
+
             >h3 {
-                
+
                 font-size: 1rem;
             }
         }
-    
+
         >.box {
             border: 0.1rem solid #fefefe;
             padding: 0.5rem;
             border-radius: 1rem;
             margin-bottom: 0.4rem;
         }
-    
+
         >.date {
             display: flex;
             width: 10rem !important;
             margin-left: 1rem;
         }
+
         input {
             height: 40px;
             border: 1px solid #ccc;
             padding: 0.5rem;
         }
     }
-    }
+}
 
-    img{
-        width: 2.5rem;
+@media only screen and (max-width: 600px) {
+    .sdeChallenge {
+        margin: 0.5rem 0.5rem;
+        padding: 0.5rem;
+
+        >.heading {
+            >h1 {
+                font-size: 1.4rem;
+            }
+
+            span {
+                // width: 40vw
+                font-size: 0.8rem;
+            }
+        }
+
+        >.container {
+            padding: 0.5rem;
+            margin: 1rem 0.3rem;
+            border-radius: 1rem;
+
+            >.date {
+                padding: 0.1rem 0.2rem;
+            }
+
+            >.box {
+                padding: 0.5rem;
+
+                >.content {
+                    margin-top: 0.3rem;
+
+                    >h3 {
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                    }
+                }
+
+                >span {
+                    font-size: 1rem;
+                    font-weight: 400;
+                }
+
+                >.links a {
+                    padding: 0.2rem 0.6rem;
+
+                    >img {
+                        width: 2rem;
+                    }
+                }
+            }
+        }
     }
+}
+
+@media only screen and (max-width: 500px) {
+    .sdechallengeadd1 {
+        margin: 0.5rem 0.7rem;
+
+        >.heading {
+            display: flex;
+            justify-content: center;
+            padding: 0.4rem;
+            align-items: center;
+            flex-direction: column-reverse;
+
+            >.date {
+                display: flex;
+                margin-left: 1rem;
+                font-size: 1rem;
+                flex-direction: column;
+                align-items: center;
+                font-size: 1.2rem;
+                >input {
+                    width: 9rem !important;
+                    height: 20px;
+                    margin-left: 0.5rem;
+                }
+            }
+
+            >h3 {
+
+                font-size: 1rem;
+            }
+        }
+
+        >.box {
+            border: 0.1rem solid #fefefe;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        >.date {
+            display: flex;
+            width: 10rem !important;
+            margin-left: 1rem;
+        }
+
+        input {
+            height: 40px;
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+        }
+    }
+}
+
