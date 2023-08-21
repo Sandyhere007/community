@@ -67,7 +67,7 @@ const UserRegister = () => {
               </div>
              
             </div>
-
+    <br />  
             <div className="button">
               <input type="submit" value="Register" />
             </div>

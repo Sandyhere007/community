@@ -6,7 +6,6 @@
   align-items: center;
   margin: 2.5rem;
   color: #000;
-  overflow-y: auto;
 }
 
 .registration .container,
@@ -16,7 +15,7 @@
   padding: 1.7rem 1.9rem;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-
+  
   >.title {
     font-size: 25px;
     font-weight: 500;
@@ -135,8 +134,16 @@ form .button {
 }
 }
 @media only screen and (max-width: 584px) {
-  .container {
-    max-width: 100%;
+  .registration,.login,.addlink{
+    margin: 2rem 30px;
+    >.container{
+      min-width: 70vw;
+      padding: 2rem;
+      >.title{
+        font-size: 1.4rem;
+      } 
+      
+    }
   }
 
   form {
@@ -147,23 +154,22 @@ form .button {
 
   }
 
-  .content form .user-details {
-    max-height: 300px;
-  }
+  
 
   
 }
 
 @media only screen and (max-width: 459px) {
-  .registration{
-    margin: 1rem;
+  .registration,.login,.addlink{
+    margin: 1rem 10px;
     >.container{
+      max-width: none;
+      min-width: 80vw;
+      padding: 20px;
       >.title{
         font-size: 1.4rem;
       } 
-      >.content >form{
-        height: auto;
-      }
+      
     }
   }
 }

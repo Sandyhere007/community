@@ -56,3 +56,15 @@
     }
 
 }
+
+@media only screen and (max-width: 634px){
+    .linksCollection{
+        margin: 10px;
+        font-size: 14px;
+        >.content { 
+            padding: 5px;         
+            >.container{
+            }
+        }
+    }
+}
