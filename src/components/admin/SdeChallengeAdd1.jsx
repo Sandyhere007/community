@@ -69,7 +69,7 @@ const SdeChallengeAdd1 = () => {
         {
           question1, question2, question3, question4
         });
-      toast.success(response.data.message);
+      toast.success("Questions added Successfully");
 
     } catch (error) {
       console.error('Error:', error);

@@ -34,6 +34,7 @@ const SdeChallenge1 = () => {
                     <div className="container" key={index}>
                         <div className="date">
                             Date : {item.created.slice(0, 10)}
+                            
                         </div>
 
                         <div className="box">

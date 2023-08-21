@@ -1,0 +1,58 @@
+.linksCollection {
+    margin: 2rem;
+    min-height: 70vh;
+
+    >.heading {
+        text-align: center;
+    }
+
+    >.content {
+        padding: 1rem;
+        .container {
+            margin: 1rem 0.5rem;
+            padding: 0.5rem 0.5rem;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 0.2rem solid black;
+            >.title {
+                text-align: center;
+                flex: 1;
+            }
+
+            >.url {
+                text-align: center;
+                flex: 1;
+                padding-left: 1rem;
+                margin-bottom: 0.3rem;
+                >a {
+                    background-color:#fff;
+                    color: coral;
+                    padding: 0.5rem 1rem;
+                    border-radius: 0.7rem;
+                }
+            }
+
+            >.contributor {
+
+                flex: 1;
+                text-align: center;
+            }
+        }
+        >.button{
+            background-color: #fff;
+            color: coral;
+            display: inline-block;
+            padding: 0.4rem 1.5rem;
+            border-radius: 1rem;
+            position: absolute;
+            line-height: 1.5rem;
+            right: 1rem;
+            >span{
+                padding: 0.5rem;
+                }
+        }
+    }
+
+}

@@ -16,6 +16,13 @@ import axios from 'axios';
 import SdeChallenge1 from './components/SdeChallenge1.jsx';
 import SdeChallengeAdd1 from './components/admin/SdeChallengeAdd1.jsx';
 import Community from './pages/Community.jsx';
+import LinksCollection from './components/links/LinksCollection.jsx';
+import AddLinks from './components/links/AddLinks.jsx';
+import Blogs from './components/blogs/Blogs.jsx';
+import AddBlog from './components/blogs/AddBlog.jsx';
+import BlogPost from './components/blogs/BlogPost.jsx';
+import EditPost from './components/blogs/EditPost.jsx';
+import MyBlogs from './components/blogs/MyBlogs.jsx';
 
 const App = () => {
 const{setUser , setIsAuthenticated } = useContext(Context);
@@ -42,13 +49,19 @@ useEffect(() =>{
         <Route path='/challenge' element={<Challenges />}></Route>
         <Route path='/aboutuspage' element={<Aboutus />}></Route>
         <Route path='/community' element={<Community />}></Route>
+        <Route path='/linkscollection' element={<LinksCollection />}></Route>
+        <Route path='/addlinks' element={<AddLinks />}></Route>
         <Route path='/userlogin' element={<UserLogin />}></Route>
         <Route path='/userregister' element={<UserRegister />}></Route>
         <Route path='/adminlogin' element={<AdminLogin />}></Route>
         <Route path='/adminregister' element={<AdminRegister />}></Route>
         <Route path='/sdechallenge1' element={<SdeChallenge1/>}></Route>
         <Route path='/sdechallengeadd1' element={<SdeChallengeAdd1 />}></Route> 
-
+        <Route path='/blogs' element={<Blogs />}></Route> 
+        <Route path='/myblogs' element={<MyBlogs />}></Route> 
+        <Route path='/addblog' element={<AddBlog />}></Route> 
+        <Route path='/blogpost/:id' element={<BlogPost />}></Route> 
+        <Route path='/editpost/:id' element={<EditPost />}></Route> 
         
 
       </Routes>

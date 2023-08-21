@@ -94,7 +94,7 @@ nav {
 
   .navItems{
     position: fixed;
-		top: -100vh;
+		top: -200vh;
 		left: 0;
 		height: 100%;
 		width: 100%;
@@ -112,7 +112,7 @@ nav {
     z-index: 3;
   }
   .responsive_nav {
-		transform: translateY(100vh);
+		transform: translateY(200vh);
     // top: 0;
 	}
   nav .nav-close-btn {

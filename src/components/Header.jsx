@@ -5,7 +5,7 @@ import axios from 'axios';
 import { server } from '../index.js';
 import { toast } from 'react-hot-toast';
 import { FaBars, FaTimes } from "react-icons/fa";
-
+import '../styles/header.scss'
 const Header = () => {
   const { isAuthenticated, setIsAuthenticated, loading, setLoading } = useContext(Context);
   const [isNavOpen, setIsNavOpen] = useState(false); // New state to manage navigation visibility
@@ -38,7 +38,8 @@ const Header = () => {
   };
 
   return (
-    <nav>
+
+    <nav >
       <h2>Community</h2>
       <div className={`navItems ${isNavOpen ? 'responsive_nav' : ''}`}>
         <Link to={"/"} onClick={closeNav}>Home</Link>
