@@ -42,7 +42,7 @@ const Blogs = () => {
                   <div className="cardBody">
                     <span className="tag tag-brown"></span>
                     <h4>{item.title}</h4>
-                    <p>{item.summary}</p>
+                    <p  dangerouslySetInnerHTML={{ __html: dataItem.summary }}></p>
                   </div>
                   <div className="cardFooter">
                     <div className="user">
