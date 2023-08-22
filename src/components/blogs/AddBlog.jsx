@@ -27,6 +27,7 @@ const formats = [
 
 const AddBlog = () => {
   const { isAuthenticated, setIsAuthenticated, loading, setLoading, setAdmin } = useContext(Context);
+  const [redirect, setRedirect] = useState(false);
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [file, setFile] = useState('');
@@ -34,6 +35,7 @@ const AddBlog = () => {
   const { user } = useContext(Context);
   const submitHandler = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const formData = new FormData();
       formData.append("title", title);
@@ -49,12 +51,19 @@ const AddBlog = () => {
         },
       },
       )
-      toast.success(data.message || "Post Edited Successfully")
+      toast.success(data.message || "Post Added Successfully")
+      setLoading(false);
+      setRedirect(true);
 
     } catch (error) {
       toast.error(error.response.data.message || "Some Error Occurred")
+    setLoading(true);
+    setRedirect(false);
+
+
     }
   };
+  if(redirect) return <Navigate to={"/blogs"} />
   if (!isAuthenticated) return <Navigate to={"/"} />
   return (
     <>

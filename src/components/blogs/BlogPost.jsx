@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Context, server } from '../..';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { AiFillDelete, AiFillEdit, AiOutlineEdit } from 'react-icons/ai';
+import { AiFillDelete, AiFillEdit, AiOutlineCalendar, } from 'react-icons/ai';
 import BlogNav from './BlogNav';
 import { toast } from 'react-hot-toast';
+import { formatISO9075 } from 'date-fns';
 
 const BlogPost = () => {
   const { isAuthenticated, setIsAuthenticated, loading, setLoading, setAdmin } = useContext(Context);
@@ -29,37 +30,38 @@ const BlogPost = () => {
       <BlogNav />
       <div className="blogpost">
         <div className="container">
-
-
-          <div class="blog" >
-            <div class="blogHeader">
-              <img src={`${server}/uploads/${dataItem.blogImage}`} alt="card__image" class="blogImage" width="600" />
-
-              <div class="user">
-                {/* <img src="{}" alt="userImage" class="userImage" /> */}
-                <div class="userInfo">
-                  {/* <h5>{dataItem.author.username}</h5> */}
-                  <small>{dataItem.createdAt}</small>
+          <div className="blog">
+            <div className="blogHeader">
+              <h1 className="blogTitle">{dataItem.title}</h1>
+              <div className="publishedInfo">
+                <div className="publishedDate">
+                  <AiOutlineCalendar />
+                  <small>{dataItem.createdAt &&
+                    formatISO9075(new Date(dataItem.createdAt))
+                  }</small>
                 </div>
+                {dataItem.author && (
+                  <div className="author">{dataItem.author.username}</div>
+                )}
+              </div>
+              <div className="user">
                 <div className="editPost">
-                  <Link to={`/editpost/${id}`}><AiFillEdit /></Link>
-                  <Link to={"/"}><AiFillDelete /></Link>
-
-
+                  <Link to={`/editpost/${id}`}>
+                    <AiFillEdit />
+                  </Link>
+                  <Link to={"/"}>
+                    <AiFillDelete />
+                  </Link>
                 </div>
               </div>
             </div>
-            <div class="blogBody">
-              <span class="tag tagBrown"></span>
-              <h4>{dataItem.title}</h4>
-              <div className="content" dangerouslySetInnerHTML={{ __html: dataItem.content }} />
-
-            </div>
+            <img
+              src={`${server}/uploads/${dataItem.blogImage}`}
+              alt="blog__image"
+              className="blogImage"
+            />
+            <div className="content" dangerouslySetInnerHTML={{ __html: dataItem.content }} />
           </div>
-          <hr />
-          <p style={{ textAlign: 'center' }}>End of the Post</p>
-
-
         </div>
       </div>
     </>

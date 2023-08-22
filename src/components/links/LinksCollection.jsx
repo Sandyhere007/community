@@ -28,22 +28,22 @@ const LinksCollection = () => {
         </div>
         <div className="content">
 
-        <div className="container">
-          <div className="title">Title of the Course</div>
-          <div className="url">Url of the Course</div>
-          <div className="contributor">Contributed by</div>
-        </div>
-
-        {links.map((items) => (
-          <div className="container" key={items._id}>
-            <div className="title">{items.title}</div>
-            <div className="url"><Link to={items.url}> Link here</Link>  </div>
-            <div className="contributor">{items.username}</div>
+          <div className="container">
+            <div className="title">Title of the Course</div>
+            <div className="url">Url of the Course</div>
+            <div className="contributor">Contributed by</div>
           </div>
-        ))
-      }
-      <Link to={"/addlinks"} className='button'><span><FaPlus/></span>Contribute One</Link>
-      </div>
+
+          {links.map((items) => (
+            <div className="container" key={items._id}>
+              <div className="title">{items.title}</div>
+              <div className="url"><Link to={items.url}> Link here</Link>  </div>
+              <div className="contributor">{items.username}</div>
+            </div>
+          ))
+          }
+          <Link to={"/addlinks"} className='button'><span><FaPlus /></span>Contribute One</Link>
+        </div>
       </div>
     </>
   )

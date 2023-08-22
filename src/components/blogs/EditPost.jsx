@@ -24,6 +24,8 @@ const formats = [
 ]
 const EditPost = () => {
     const { isAuthenticated, setIsAuthenticated, loading, setLoading, setAdmin } = useContext(Context);
+    const [redirect, setRedirect] = useState(false);
+    
     const { id } = useParams();
     const [title, setTitle] = useState("");
     const [summary, setSummary] = useState("");
@@ -65,13 +67,16 @@ const EditPost = () => {
 
             },
             )
-            toast.success(data.message || "Post Added Successfully")
+            toast.success(data.message || "Post Edited Successfully")
+            setRedirect(true);
         } catch (error) {
             toast.error(error.response.data.message || "Some Error Occurred")
-
+            setRedirect(false);
 
         }
     };
+  if(redirect) return <Navigate to={"/blogs"} />
+
     if (!isAuthenticated) return <Navigate to={"/"} />
     return (
         <>
