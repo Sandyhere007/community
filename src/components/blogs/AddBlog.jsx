@@ -56,7 +56,7 @@ const AddBlog = () => {
       setRedirect(true);
 
     } catch (error) {
-      toast.error(error.response.data.message || "Some Error Occurred")
+      // toast.error(error.response.data.message || "Some Error Occurred")
     setLoading(true);
     setRedirect(false);
 

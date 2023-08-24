@@ -37,7 +37,7 @@ const Blogs = () => {
 
                 <div className="card" key={item._id}>
                   <div className="cardHeader">
-                    <img src={`${server}/uploads/${item.blogImage}`} alt="card__image" className="card__image" width="600" />
+                    <img src={item.blogImage} alt="card__image" className="card__image" width="600" />
                   </div>
                   <div className="cardBody">
                     <span className="tag tag-brown"></span>
