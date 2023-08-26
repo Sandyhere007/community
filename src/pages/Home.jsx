@@ -12,8 +12,8 @@ const Home = () => {
         We are a community where we help each other by sharing notes, writing blogs, Sharing Project Links, Solving Problem Solving Techniques Together, Doing Challenges, and having much more fun.
       </div>
       <div className="button">
-        <button> <Link to="aboutuspage" > About Us </Link></button>
-        <button> <Link to="userlogin" > Join Us </Link></button>
+        <button> <Link to="/aboutuspage" > About Us </Link></button>
+        <button> <Link to="/userlogin" > Join Us </Link></button>
         
       </div>
     </ div>

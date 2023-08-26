@@ -33,6 +33,22 @@
 
   }
 }
+.blogCategory{
+  margin: 2vh 2vw;
+ >.categoryItems{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  >button{
+    padding: 3px 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    background-color: #fff;
+  }
+ }
+}
 
 .blog {
   position: relative;
@@ -88,11 +104,16 @@
         }
         .tag {
           display: inline-block;
-          width: 10px;
-          height: 10px;
+          
+          padding: 3px 20px;
           background-color: #a9826e;
-          border-radius: 50%;
+          border-radius: 5px;
           margin-right: 5px;
+        }
+        .summary{
+          line-height: normal;
+          letter-spacing: normal;
+          font-size: 0.7rem;
         }
       }
       .cardFooter {

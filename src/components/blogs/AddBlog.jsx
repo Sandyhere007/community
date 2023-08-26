@@ -32,6 +32,7 @@ const AddBlog = () => {
   const [summary, setSummary] = useState("");
   const [file, setFile] = useState('');
   const [content, setContent] = useState("");
+  const [category, setCategory] = useState("");
   const { user } = useContext(Context);
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -39,6 +40,7 @@ const AddBlog = () => {
     try {
       const formData = new FormData();
       formData.append("title", title);
+      formData.append("category", category);
       formData.append("summary", content.substring(0, 100));
       formData.append("file", file);
       formData.append("content", content);
@@ -57,13 +59,13 @@ const AddBlog = () => {
 
     } catch (error) {
       // toast.error(error.response.data.message || "Some Error Occurred")
-    setLoading(true);
-    setRedirect(false);
+      setLoading(true);
+      setRedirect(false);
 
 
     }
   };
-  if(redirect) return <Navigate to={"/blogs"} />
+  if (redirect) return <Navigate to={"/blogs"} />
   if (!isAuthenticated) return <Navigate to={"/"} />
   return (
     <>
@@ -78,6 +80,14 @@ const AddBlog = () => {
               placeholder='Enter the title'
               value={title}
               onChange={(e) => setTitle(e.target.value)} />
+          </div>
+          <div className="inputField">
+            <span className="details">Category </span>
+            <input
+              type="text"
+              placeholder='Choose a category of your Blog'
+              value={category}
+              onChange={(e) => setCategory(e.target.value)} />
           </div>
           <div className="inputField">
             <span className="details">Select the cover imge of your Blog</span>

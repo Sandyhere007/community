@@ -54,7 +54,7 @@ useEffect(() =>{
         <Route path='/userlogin' element={<UserLogin />}></Route>
         <Route path='/userregister' element={<UserRegister />}></Route>
         <Route path='/adminlogin' element={<AdminLogin />}></Route>
-        <Route path='/adminregister' element={<AdminRegister />}></Route>
+        <Route path='/adminregister1111' element={<AdminRegister />}></Route>
         <Route path='/sdechallenge1' element={<SdeChallenge1/>}></Route>
         <Route path='/sdechallengeadd1' element={<SdeChallengeAdd1 />}></Route> 
         <Route path='/blogs' element={<Blogs />}></Route> 

@@ -8,7 +8,9 @@ import format from 'date-fns/format';
 import { formatISO9075 } from 'date-fns';
 const Blogs = () => {
   const [dataItem, setDataItem] = useState([]);
+  const [categoryItems, setCategoryItems] = useState([]);
   const { isAuthenticated, setIsAuthenticated, loading, setLoading, setAdmin } = useContext(Context);
+
   try {
     useEffect(() => {
       axios.get(`${server}/blog/all`, {
@@ -18,9 +20,41 @@ const Blogs = () => {
     }, [])
   } catch (error) {
     toast.error(error.response.data.message || "Some Error Occurred")
-
   }
+  try {
+    useEffect(() => {
+      axios.get(`${server}/blog/all`, {
+        withCredentials: true,
+      }).then((res) => {
+        setCategoryItems(res.data)
+        const uniqueCategories = new Set(res.data.map(item => item.category));
+        setCategoryItems(Array.from(uniqueCategories));
+      })
+        .catch(err => console.error(err));
+    }, [])
+  } catch (error) {
+    toast.error(error.response.data.message || "Some Error Occurred")
+  }
+  const submitHandler = (category) => {
+    if (category === "All") {
+      axios.get(`${server}/blog/all`, {
+        withCredentials: true,
+      }).then((res) => setDataItem(res.data))
+        .catch(err => console.error(err));
+    }
+    else {
 
+
+
+      try {
+        axios
+          .get(`${server}/blog/by-category?category=${category}`)
+          .then((res) => setDataItem(res.data))
+          .catch(err => console.error(err));
+      } catch (error) {
+      }
+    }
+  }
 
 
   if (!isAuthenticated) return <Navigate to={"/"} />
@@ -28,11 +62,22 @@ const Blogs = () => {
     <>
 
       <BlogNav />
-      <div className="blog">
+      <div className="blogCategory">
+        <div className="categoryItems">
 
+          {
+            categoryItems && categoryItems.map((category) => (
+              <button
+                onClick={() => submitHandler(category)}> {category}  </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <div className="blog">
         <div className="content">
           {
-            dataItem.map((item) => (
+            dataItem && dataItem.map((item) => (
               <Link to={`/blogpost/${item._id}`}>
 
                 <div className="card" key={item._id}>
@@ -40,9 +85,9 @@ const Blogs = () => {
                     <img src={item.blogImage} alt="card__image" className="card__image" width="600" />
                   </div>
                   <div className="cardBody">
-                    <span className="tag tag-brown"></span>
+                    <span className="tag tag-brown">{item.category}</span>
                     <h4>{item.title}</h4>
-                    <p  dangerouslySetInnerHTML={{ __html: dataItem.summary }}></p>
+                    <p className='summary' dangerouslySetInnerHTML={{ __html: item.summary }}></p>
                   </div>
                   <div className="cardFooter">
                     <div className="user">

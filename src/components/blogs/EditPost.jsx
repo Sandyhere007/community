@@ -25,12 +25,14 @@ const formats = [
 const EditPost = () => {
     const { isAuthenticated, setIsAuthenticated, loading, setLoading, setAdmin } = useContext(Context);
     const [redirect, setRedirect] = useState(false);
-    
+
     const { id } = useParams();
     const [title, setTitle] = useState("");
     const [summary, setSummary] = useState("");
     const [file, setFile] = useState('');
     const [content, setContent] = useState("");
+    const [category, setCategory] = useState("");
+
     const { user } = useContext(Context);
 
     try {
@@ -54,6 +56,7 @@ const EditPost = () => {
             e.preventDefault();
             const formData = new FormData();
             formData.append("title", title);
+            formData.append("category", category);
             formData.append("summary", content.slice(0, 100));
             formData.append("file", file);
             formData.append("content", content);
@@ -75,7 +78,7 @@ const EditPost = () => {
 
         }
     };
-  if(redirect) return <Navigate to={"/blogs"} />
+    if (redirect) return <Navigate to={"/blogs"} />
 
     if (!isAuthenticated) return <Navigate to={"/"} />
     return (
@@ -91,6 +94,14 @@ const EditPost = () => {
                             placeholder='Enter the title'
                             value={title}
                             onChange={(e) => setTitle(e.target.value)} />
+                    </div>
+                    <div className="inputField">
+                        <span className="details">Category </span>
+                        <input
+                            type="text"
+                            placeholder='Choose a category of your Blog'
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value)} />
                     </div>
                     <div className="inputField">
                         <span className="details">Select the cover imge of your Blog</span>
