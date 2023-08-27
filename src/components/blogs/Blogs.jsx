@@ -87,7 +87,7 @@ const Blogs = () => {
                   <div className="cardBody">
                     <span className="tag tag-brown">{item.category}</span>
                     <h4>{item.title}</h4>
-                    <p className='summary' dangerouslySetInnerHTML={{ __html: item.summary }}></p>
+                    <p className='summary' dangerouslySetInnerHTML={{ __html: item.summary }}  style={{fontSize : "1rem"}}></p>
                   </div>
                   <div className="cardFooter">
                     <div className="user">

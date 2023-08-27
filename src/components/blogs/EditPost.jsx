@@ -28,10 +28,10 @@ const EditPost = () => {
 
     const { id } = useParams();
     const [title, setTitle] = useState("");
+    const [category, setCategory] = useState("");
     const [summary, setSummary] = useState("");
     const [file, setFile] = useState('');
     const [content, setContent] = useState("");
-    const [category, setCategory] = useState("");
 
     const { user } = useContext(Context);
 
@@ -42,9 +42,10 @@ const EditPost = () => {
                 .get(`${server}/blog/blogpost/${id}`)
                 .then(res => {
                     setTitle(res.data.title)
-                    setContent(res.data.content)
+                    setCategory(res.data.category)
                     setSummary(res.data.summary)
-                    setTitle(res.data.title)
+                    setFile(res.data.blogImage)
+                    setContent(res.data.content)
                 })
                 .catch(err => console.error(err));
         }, [])
@@ -111,6 +112,7 @@ const EditPost = () => {
                         <input
                             type="file"
                             name="blogImage"
+                            value={blogImage}
                             onChange={(e) => setFile(e.target.files[0])} />
                     </div>
                     <div className="inputField">
