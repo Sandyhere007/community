@@ -52,8 +52,9 @@ const EditPost = () => {
         toast.error("Some Error Occured");
     }
     const submitHandler = async (e) => {
+        setLoading(true);
+        e.preventDefault();
         try {
-            e.preventDefault();
             const formData = new FormData();
             formData.append("title", title);
             formData.append("category", category);
@@ -71,10 +72,12 @@ const EditPost = () => {
             },
             )
             toast.success(data.message || "Post Edited Successfully")
+            setLoading(false);
             setRedirect(true);
         } catch (error) {
             toast.error(error.response.data.message || "Some Error Occurred")
             setRedirect(false);
+            setLoading(false);
 
         }
     };
@@ -120,7 +123,7 @@ const EditPost = () => {
                             formats={formats} />
                     </div>
 
-                    <input className='submitBtn' type="submit" value="Add Post" />
+                    <input className='submitBtn' type="submit" value="Add Post" disabled={loading}/>
                 </form>
             </div>
         </>

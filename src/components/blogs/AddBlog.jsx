@@ -106,7 +106,7 @@ const AddBlog = () => {
               formats={formats} />
           </div>
 
-          <input className='submitBtn' type="submit" value="Add Post" />
+          <input className='submitBtn' type="submit" value="Add Post" disabled={loading}/>
         </form>
       </div>
     </>
