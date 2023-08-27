@@ -107,7 +107,7 @@
         gap: 0.5rem;
         overflow: hidden;
         >h4 {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           text-transform: capitalize;
         }
         .tag {
@@ -121,7 +121,7 @@
         .summary{
           line-height: normal;
           letter-spacing: normal;
-          font-size: 0.7rem;
+          font-size: 0.7rem !important;
         }
       }
       .cardFooter {
@@ -139,7 +139,17 @@
     }
   }
 
-
+@media only screen and (max-width: 500px) {
+  .blog {
+    position: relative;
+    margin: 5vh 4vw;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
 }
 
 
