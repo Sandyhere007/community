@@ -6,6 +6,7 @@ import BlogNav from './BlogNav';
 import { toast } from 'react-hot-toast';
 import format from 'date-fns/format';
 import { formatISO9075 } from 'date-fns';
+import UserLogin from '../../pages/UserLogin';
 const Blogs = () => {
   const [dataItem, setDataItem] = useState([]);
   const [categoryItems, setCategoryItems] = useState([]);
@@ -28,7 +29,7 @@ const Blogs = () => {
       }).then((res) => {
         setCategoryItems(res.data)
         const uniqueCategories = new Set(res.data.map(item => item.category));
-        setCategoryItems(Array.from(uniqueCategories));
+        setCategoryItems(Array.from(uniqueCategories).sort());
       })
         .catch(err => console.error(err));
     }, [])
@@ -57,7 +58,6 @@ const Blogs = () => {
   }
 
 
-  if (!isAuthenticated) return <Navigate to={"/"} />
   return (
     <>
 

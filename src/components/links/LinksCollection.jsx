@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import { server } from '../..';
+import { Context, server } from '../..';
 import { Link } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
+import UserLogin from '../../pages/UserLogin';
+import { toast } from 'react-hot-toast';
 
 const LinksCollection = () => {
+  const { isAuthenticated, setIsAuthenticated, loading, setLoading, setAdmin } = useContext(Context);
 
   const [links, setLinks] = useState([]);
   useEffect(() => {
@@ -17,7 +20,6 @@ const LinksCollection = () => {
       )
       .catch(err => console.error(err));
   }, [])
-
 
   return (
     <>

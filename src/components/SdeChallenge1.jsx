@@ -6,6 +6,14 @@ import gfg from '../icons/gfg.png';
 import leetcode from '../icons/leetcode.png';
 import SdeChallengeAdd1 from './admin/SdeChallengeAdd1';
 import UserLogin from '../pages/UserLogin';
+import { toast } from 'react-hot-toast';
+import { Navigate } from 'react-router-dom';
+
+
+const LoginWithError = () =>{
+    toast.error("Login First");
+    <Navigate to={"/"} />
+}
 
 const SdeChallenge1 = () => {
     const [questions, setQuestions] = useState([]);
@@ -96,7 +104,8 @@ const SdeChallenge1 = () => {
            {(admin) ? <SdeChallengeAdd1 /> :
           <hr />
         }
-        </div> : <UserLogin />
+        </div> : <LoginWithError />
+        
     )
 }
 export default SdeChallenge1

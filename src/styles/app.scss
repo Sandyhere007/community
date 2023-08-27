@@ -29,8 +29,10 @@
 }
 
 body{
+    width: 100vw;
     background: #012231;
     color: #ccc;
+    overflow-x: hidden;
     // width: 100vw;
     // height: 100vh;
 }
