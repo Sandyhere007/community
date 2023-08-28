@@ -112,7 +112,7 @@ const EditPost = () => {
                         <input
                             type="file"
                             name="blogImage"
-                            value={blogImage}
+                            value={file}
                             onChange={(e) => setFile(e.target.files[0])} />
                     </div>
                     <div className="inputField">
