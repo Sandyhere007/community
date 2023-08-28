@@ -60,7 +60,9 @@ const EditPost = () => {
             formData.append("title", title);
             formData.append("category", category);
             formData.append("summary", content.slice(0, 100));
-            formData.append("file", file);
+            if(file){
+                formData.append("file", file);
+            }
             formData.append("content", content);
             formData.append("author", user._id)
 
