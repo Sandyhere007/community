@@ -24,7 +24,7 @@ const BlogPost = () => {
 
   }
 
-  if (!isAuthenticated) return <Navigate to={"/"} />
+  // if (!isAuthenticated) return <Navigate to={"/"} />
   return (
     <>
       <BlogNav />
