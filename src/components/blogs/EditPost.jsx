@@ -30,7 +30,7 @@ const EditPost = () => {
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [summary, setSummary] = useState("");
-    const [file, setFile] = useState('');
+    const [file, setFile] = useState(null);
     const [content, setContent] = useState("");
 
     const { user } = useContext(Context);
@@ -82,7 +82,7 @@ const EditPost = () => {
 
         }
     };
-    if (redirect) return <Navigate to={"/blogs"} />
+    if (redirect) return <Navigate to={"/blogs"}  />
 
     if (!isAuthenticated) return <Navigate to={"/"} />
     return (
@@ -112,7 +112,6 @@ const EditPost = () => {
                         <input
                             type="file"
                             name="blogImage"
-                            value={file}
                             onChange={(e) => setFile(e.target.files[0])} />
                     </div>
                     <div className="inputField">

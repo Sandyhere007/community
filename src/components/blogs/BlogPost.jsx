@@ -56,7 +56,7 @@ const BlogPost = () => {
               </div>
             </div>
             <img
-              src={`${server}/uploads/${dataItem.blogImage}`}
+              src={dataItem.blogImage}
               alt="blog__image"
               className="blogImage"
             />
