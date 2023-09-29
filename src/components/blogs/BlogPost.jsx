@@ -7,6 +7,7 @@ import BlogNav from './BlogNav';
 import { toast } from 'react-hot-toast';
 import { formatISO9075 } from 'date-fns';
 import ReactQuill from 'react-quill';
+import UserLogin from '../../pages/UserLogin';
 
 const BlogPost = () => {
   const { isAuthenticated, setIsAuthenticated, loading, setLoading, setAdmin } = useContext(Context);
@@ -27,6 +28,7 @@ const BlogPost = () => {
 
   // if (!isAuthenticated) return <Navigate to={"/"} />
   return (
+    (isAuthenticated)?
     <>
       <BlogNav />
       <div className="blogpost">
@@ -77,7 +79,7 @@ const BlogPost = () => {
           </div>
         </div>
       </div>
-    </>
+    </>:<UserLogin />
 
   )
 }
