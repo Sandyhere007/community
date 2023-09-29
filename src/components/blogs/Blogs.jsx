@@ -44,9 +44,6 @@ const Blogs = () => {
         .catch(err => console.error(err));
     }
     else {
-
-
-
       try {
         axios
           .get(`${server}/blog/by-category?category=${category}`)
@@ -59,8 +56,8 @@ const Blogs = () => {
 
 
   return (
-    <>
-
+    (isAuthenticated) ?
+   <>
       <BlogNav />
       <div className="blogCategory">
         <div className="categoryItems">
@@ -108,7 +105,7 @@ const Blogs = () => {
 
         </div>
       </div>
-    </>
+    </>: <UserLogin />
   )
 }
 

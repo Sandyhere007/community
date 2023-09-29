@@ -6,6 +6,7 @@ import { AiFillDelete, AiFillEdit, AiOutlineCalendar, } from 'react-icons/ai';
 import BlogNav from './BlogNav';
 import { toast } from 'react-hot-toast';
 import { formatISO9075 } from 'date-fns';
+import ReactQuill from 'react-quill';
 
 const BlogPost = () => {
   const { isAuthenticated, setIsAuthenticated, loading, setLoading, setAdmin } = useContext(Context);
@@ -60,7 +61,19 @@ const BlogPost = () => {
               alt="blog__image"
               className="blogImage"
             />
-            <div className="content" dangerouslySetInnerHTML={{ __html: dataItem.content }} />
+            
+            <ReactQuill
+            className="content"
+          value={dataItem.content}
+          readOnly={true}
+        modules={{
+          toolbar: false, // Disable the toolbar if you don't need it
+          clipboard: {
+      matchVisual: false, // Set this to false to paste plain text
+    },
+  }}
+/>
+            {/* <div className="content" dangerouslySetInnerHTML={{ __html: dataItem.content }} /> */}
           </div>
         </div>
       </div>

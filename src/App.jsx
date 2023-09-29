@@ -23,6 +23,7 @@ import AddBlog from './components/blogs/AddBlog.jsx';
 import BlogPost from './components/blogs/BlogPost.jsx';
 import EditPost from './components/blogs/EditPost.jsx';
 import MyBlogs from './components/blogs/MyBlogs.jsx';
+import UnderConstruction from './pages/UnderConstruction.jsx';
 
 const App = () => {
 const{setUser , setIsAuthenticated } = useContext(Context);
@@ -62,6 +63,7 @@ useEffect(() =>{
         <Route path='/addblog' element={<AddBlog />}></Route> 
         <Route path='/blogpost/:id' element={<BlogPost />}></Route> 
         <Route path='/editpost/:id' element={<EditPost />}></Route> 
+        <Route path='/underconstruction' element={<UnderConstruction />}></Route> 
         
 
       </Routes>

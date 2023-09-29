@@ -1,0 +1,15 @@
+.underconstruction{
+    width: 100%;
+    height: 70vh;
+    background-color: aliceblue;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >.content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

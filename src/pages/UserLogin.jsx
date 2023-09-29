@@ -5,6 +5,7 @@ import { server } from '../index.js';
 import { toast } from 'react-hot-toast';
 import { Context } from '../index.js';
 
+toast.success("Login First")
 const UserLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,6 +35,7 @@ const UserLogin = () => {
   };
   if(isAuthenticated) return <Navigate to={"/"} />
   return (
+   
     <div className="login">
     <div className="container">
     <div className="title">User Login</div>
@@ -62,5 +64,4 @@ const UserLogin = () => {
     </div>
   )
 }
-
 export default UserLogin

@@ -326,6 +326,7 @@
   background-color: #F5F5F5;
   color: #333;
   margin: 2rem 0;
+  overflow-x: scroll;
 
   .container {
     width: 90%;
@@ -409,9 +410,13 @@
       }
 
       .content {
+        min-width: 100%;
         padding: 1rem;
         font-size: 1.1rem;
         line-height: 1.6rem;
+        > .ql-editor{
+          width: 80vw;
+        }
       }
     }
   }

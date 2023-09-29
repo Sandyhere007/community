@@ -60,13 +60,11 @@ const EditPost = () => {
             formData.append("title", title);
             formData.append("category", category);
             formData.append("summary", content.slice(0, 100));
-            if(file){
-                formData.append("file", file);
-            }
+            formData.append("file", file);
             formData.append("content", content);
             formData.append("author", user._id)
 
-            const data = await axios.put(`${server}/blog/addblog`,
+            const data = await axios.put(`${server}/blog/addblog/${id}`,
                 formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
@@ -74,11 +72,11 @@ const EditPost = () => {
 
             },
             )
-            toast.success(data.message || "Post Edited Successfully")
+            toast.success("Post Edited Successfully")
             setLoading(false);
             setRedirect(true);
         } catch (error) {
-            toast.error(error.response.data.message || "Some Error Occurred")
+            toast.error("Some Error Occurred")
             setRedirect(false);
             setLoading(false);
 

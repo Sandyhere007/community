@@ -6,6 +6,7 @@ import { server } from '../index.js';
 import { toast } from 'react-hot-toast';
 import { FaBars, FaTimes } from "react-icons/fa";
 import '../styles/header.scss'
+import mainImage from '../images/codersarena.png';
 const Header = () => {
   const { isAuthenticated, setIsAuthenticated, loading, setLoading } = useContext(Context);
   const [isNavOpen, setIsNavOpen] = useState(false); // New state to manage navigation visibility
@@ -40,7 +41,8 @@ const Header = () => {
   return (
 
     <nav >
-      <h2>Community</h2>
+      <div className="logo"><img src={mainImage} alt="" /></div>
+      
       <div className={`navItems ${isNavOpen ? 'responsive_nav' : ''}`}>
         <Link to={"/"} onClick={closeNav}>Home</Link>
         <Link to={"/community"} onClick={closeNav}>Community</Link>
