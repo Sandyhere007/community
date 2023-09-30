@@ -39,7 +39,7 @@ const SdeChallenge1 = () => {
                 setIsComplete3(res.data.question3.isComplete);
                 setIsComplete4(res.data.question4.isComplete);
             })
-            .catch(err => );
+            .catch(err => console.error(err));
     }, [])
 
 
