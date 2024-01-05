@@ -10,12 +10,9 @@ const Footer = () => {
   return (
     <footer>
       <div>
-        <img
-          src={me}
-          alt="Developer"
-        />
+       
         <div className="text">
-          <h2>Sandeep Patidar</h2>
+          <h2>Coders Arena</h2>
           <p>Believe In Yourself.</p>
         </div>
       </div>
@@ -24,13 +21,13 @@ const Footer = () => {
         <h2>Social Media</h2>
 
         <article>
-          <a href="https://www.instagram.com/__sandeeppatidar__/" target={"blank"}>
+          <a href="" target={"blank"}>
             <AiFillInstagram />
           </a>
-          <a href="https://github.com/Sandyhere007" target={"blank"}>
+          <a href="" target={"blank"}>
             <AiFillGithub />
           </a>
-          <a href="https://www.linkedin.com/in/sandeep-patidar-3a8857233/" target={"blank"} >
+          <a href="" target={"blank"} >
             <AiFillLinkedin />
           </a>
         </article>

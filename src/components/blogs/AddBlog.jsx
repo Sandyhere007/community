@@ -79,7 +79,7 @@ const AddBlog = () => {
               type="text"
               placeholder='Enter the title'
               value={title}
-              onChange={(e) => setTitle(e.target.value)} />
+              onChange={(e) => setTitle(e.target.value)} required />
           </div>
           <div className="inputField">
             <span className="details">Category </span>
@@ -87,14 +87,14 @@ const AddBlog = () => {
               type="text"
               placeholder='Choose a category of your Blog'
               value={category}
-              onChange={(e) => setCategory(e.target.value)} />
+              onChange={(e) => setCategory(e.target.value)} required/>
           </div>
           <div className="inputField">
-            <span className="details">Select the cover imge of your Blog</span>
+            <span className="details">Select the cover image of your Blog</span>
             <input
               type="file"
               name="blogImage"
-              onChange={(e) => setFile(e.target.files[0])} />
+              onChange={(e) => setFile(e.target.files[0])} required/>
           </div>
           <div className="inputField">
             <span className="details">Content of Post </span>

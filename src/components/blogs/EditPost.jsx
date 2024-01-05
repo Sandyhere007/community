@@ -97,7 +97,7 @@ const EditPost = () => {
                             type="text"
                             placeholder='Enter the title'
                             value={title}
-                            onChange={(e) => setTitle(e.target.value)} />
+                            onChange={(e) => setTitle(e.target.value)} required />
                     </div>
                     <div className="inputField">
                         <span className="details">Category </span>
@@ -105,21 +105,21 @@ const EditPost = () => {
                             type="text"
                             placeholder='Choose a category of your Blog'
                             value={category}
-                            onChange={(e) => setCategory(e.target.value)} />
+                            onChange={(e) => setCategory(e.target.value)} required/>
                     </div>
                     <div className="inputField">
                         <span className="details">Select the cover imge of your Blog</span>
                         <input
                             type="file"
                             name="blogImage"
-                            onChange={(e) => setFile(e.target.files[0])} />
+                            onChange={(e) => setFile(e.target.files[0])} required/>
                     </div>
                     <div className="inputField">
                         <span className="details">Content of Post </span>
                         <ReactQuill className='blogContent'
                             placeholder='Start Writing From Here'
                             value={content}
-                            onChange={newValues => setContent(newValues)}
+                            onChange={newValues => setContent(newValues)} 
                             modules={modules}
                             formats={formats} />
                     </div>
