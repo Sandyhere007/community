@@ -11,7 +11,7 @@ const Community = () => {
           <Link to={"/challenge"} >Challenges</Link>
 
           <Link to={"/blogs"}>Technical Blogs </Link>
-          <Link to={"/underconstruction"}>Community Forum</Link>
+          <Link to={"/communityforum"}>Community Forum</Link>
           <Link to={"/linkscollection"} >Links of Free courses</Link>
         </div>
       </aside>
