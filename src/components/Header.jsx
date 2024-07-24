@@ -46,7 +46,7 @@ const Header = () => {
       <div className={`navItems ${isNavOpen ? 'responsive_nav' : ''}`}>
         <Link to={"/"} onClick={closeNav}>Home</Link>
         <Link to={"/community"} onClick={closeNav}>Community</Link>
-        <Link to={"/challenge"} onClick={closeNav}>Challenge</Link>
+        <Link to={"/blogs"} onClick={closeNav}>Blog</Link>
         <Link to={"/aboutuspage"} onClick={closeNav}>About</Link>
         {(isAuthenticated) ? (
           <button disabled={loading} onClick={logoutHandler}>

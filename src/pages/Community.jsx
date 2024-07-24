@@ -8,7 +8,6 @@ const Community = () => {
           Useful Links
         </div>
         <div className="tabs">
-          <Link to={"/challenge"} >Challenges</Link>
 
           <Link to={"/blogs"}>Technical Blogs </Link>
           <Link to={"/communityforum"}>Community Forum</Link>
